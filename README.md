@@ -9,6 +9,3 @@ Static site served by GitHub Pages from this `gh-pages` branch (Settings → Pag
 
 Preview locally with `python -m http.server` and open http://localhost:8000.
 
-```
-python -m http.server 8766 --bind 127.0.0.1 --directory ."
-```
