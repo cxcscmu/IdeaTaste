@@ -1,0 +1,76 @@
+# Every model IdeaTaste calls. Add a model by adding an entry; any OpenAI-compatible endpoint needs no code.
+#
+#   role            agent (writes proposals) | judge | extractor
+#   provider        openai_compatible (default) | bedrock
+#   base_url        endpoint root; /chat/completions is appended
+#   model           model string sent to the endpoint
+#   api_key_env     environment variable holding the key
+#   max_tokens      sent only when set (the paper sends it only where the API requires one)
+#   reasoning_effort  sent only when set
+#   fallback_reasoning_effort  reasoning effort for a call that got two empty replies
+#
+# Temperature, top-p, seed and tool definitions are never sent: every endpoint runs at its own default (paper, Appendix "Language Models and Inference Settings").
+
+# Agent models are listed by release date; release_date bounds what each could have seen in training (the reference papers are from 2026).
+models:
+  llama-4-scout:
+    role: agent
+    release_date: 2025-04-05
+    provider: bedrock
+    model: us.meta.llama4-scout-17b-instruct-v1:0
+    region: us-east-1
+    api_key_env: AWS_BEARER_TOKEN_BEDROCK
+    max_tokens: 8192
+
+  claude-haiku-4.5:
+    role: agent
+    release_date: 2025-10-15
+    base_url: https://api.anthropic.com/v1
+    model: claude-haiku-4-5-20251001
+    api_key_env: ANTHROPIC_API_KEY
+    max_tokens: 16384
+
+  gemini-3.5-flash-lite:
+    role: agent
+    release_date: 2026-07-21
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai
+    model: gemini-3.5-flash-lite
+    api_key_env: GOOGLE_API_KEY
+    reasoning_effort: medium
+    fallback_reasoning_effort: minimal   # used for one call after two empty replies
+
+  deepseek-v4-flash:
+    role: agent
+    release_date: 2026-07-31
+    base_url: https://api.deepseek.com
+    model: deepseek-v4-flash
+    api_key_env: DEEPSEEK_API_KEY
+
+  qwen3.8-27b:
+    role: agent
+    release_date: 2026-08-14
+    # Served locally: vllm serve Qwen/Qwen3.8-27B --served-model-name qwen3.8-27b --reasoning-parser qwen3
+    base_url: http://localhost:8000/v1
+    model: qwen3.8-27b
+    api_key_env: VLLM_API_KEY
+
+  k2-horizon:
+    role: agent
+    release_date: 2026-09-03
+    base_url: https://api.ifm.ai/v1
+    model: IFM/K2-Horizon-375B-A23B
+    api_key_env: IFM_API_KEY
+
+  gpt-5.6-luna:
+    role: judge
+    base_url: https://api.openai.com/v1
+    model: gpt-5.6-luna
+    api_key_env: OPENAI_API_KEY
+    max_tokens: 1200
+
+  deepseek-v4-pro:
+    role: extractor
+    base_url: https://api.deepseek.com
+    model: deepseek-v4-pro
+    api_key_env: DEEPSEEK_API_KEY
+    max_tokens: 16384

@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# IdeaTaste: the release data lives on HuggingFace; only its card is versioned.
+data/*
+!data/README.md
+!data/download_and_preview.py
+runs/

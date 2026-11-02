@@ -1,0 +1,3 @@
+# Area definition shown to every LLM agent and used to screen the human reference.
+name: code_generation
+definition: 'Code generation: research on automatically producing program code from natural-language or other specifications with learned models — code LLMs and pretrained code models, program synthesis, NL2code (incl. text-to-SQL), code benchmarks and code-specific evaluation, program repair and self-debugging, coding agents and LLM-based software engineering, code data curation. NOT in scope: generic LLM/NLP foundation work (GPT / LLaMA / RLHF / LoRA), generic agent or reasoning work without a code focus, generic MT metrics, papers that merely use code as an application domain without studying generation.'

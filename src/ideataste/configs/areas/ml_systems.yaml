@@ -1,0 +1,3 @@
+# Area definition shown to every LLM agent and used to screen the human reference.
+name: ml_systems
+definition: 'MLSys: systems research for efficient training and inference of ML/LLM models — inference serving and scheduling, KV-cache and memory management, distributed training and parallelism, quantization / pruning / distillation for efficiency, speculative decoding, efficiency-motivated attention and architecture changes, ML compilers and kernels, hardware acceleration, MoE systems. NOT in scope: architecture work aimed at task quality, downstream applications that merely use these systems, RAG, alignment, generic HPC unrelated to ML.'

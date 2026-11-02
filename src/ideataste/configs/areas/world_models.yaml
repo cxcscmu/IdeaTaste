@@ -1,0 +1,3 @@
+# Area definition shown to every LLM agent and used to screen the human reference.
+name: world_models
+definition: 'World models: learned internal models of an environment that (i) represent its current state and (ii) predict future states under actions, used for planning and decision-making, simulation, and data generation. Lineages: model-based RL with latent dynamics (World Models / PlaNet / Dreamer / MuZero), video-generative world simulators (Sora / Genie), JEPA-style predictive representation learning, and domain instances in robotics, autonomous driving and games. NOT in scope: generic video generation or vision backbones not positioned as environment models; model-free RL; generic LLM/NLP work.'

@@ -1,0 +1,3 @@
+# Area definition shown to every LLM agent and used to screen the human reference.
+name: auto_research
+definition: 'Auto research (AI scientist): AI systems, especially LLM agents, that automate stages of the scientific research process — hypothesis and idea generation, experiment planning and execution (including ML engineering and laboratory automation), analysis, scientific writing and peer review, up to end-to-end autonomous AI scientists; includes research-agent benchmarks and equation/function discovery. NOT in scope: philosophy of science without AI, generic agent frameworks without a research-automation focus, domain-science papers that merely use AI as a tool, generic literature-retrieval tools.'
