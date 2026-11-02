@@ -1,0 +1,742 @@
+{
+ "metrics": [
+  "match_cite",
+  "match_idea",
+  "diversity_cite",
+  "diversity_idea"
+ ],
+ "areas": [
+  {
+   "key": "ml_systems",
+   "name": "Machine learning systems",
+   "corpus": 88184,
+   "reference": 5188
+  },
+  {
+   "key": "code_generation",
+   "name": "Code generation",
+   "corpus": 94674,
+   "reference": 3375
+  },
+  {
+   "key": "world_models",
+   "name": "World models",
+   "corpus": 50271,
+   "reference": 1867
+  },
+  {
+   "key": "automated_research",
+   "name": "Automated research",
+   "corpus": 30264,
+   "reference": 1136
+  }
+ ],
+ "methods": [
+  "free",
+  "topic",
+  "landscape",
+  "frontier"
+ ],
+ "human": {
+  "ml_systems": {
+   "match_cite": 0.20841783794192306,
+   "match_idea": 0.1356049018748396,
+   "diversity_cite": 0.13501190280175818,
+   "diversity_idea": 0.8496601401393704
+  },
+  "code_generation": {
+   "match_cite": 0.1874574103330165,
+   "match_idea": 0.11251331441135531,
+   "diversity_cite": 0.18635243970473336,
+   "diversity_idea": 0.8741051660333277
+  },
+  "world_models": {
+   "match_cite": 0.1637687973481871,
+   "match_idea": 0.1386825488026197,
+   "diversity_cite": 0.14676371959084156,
+   "diversity_idea": 0.8430627889203195
+  },
+  "automated_research": {
+   "match_cite": 0.18514223453746365,
+   "match_idea": 0.10528553702700771,
+   "diversity_cite": 0.21690048376418464,
+   "diversity_idea": 0.8752330780320563
+  }
+ },
+ "models": [
+  {
+   "key": "llama-4-scout",
+   "name": "Llama 4 Scout",
+   "release_date": "2025-04-05",
+   "pre_2026": true
+  },
+  {
+   "key": "claude-haiku-4.5",
+   "name": "Claude Haiku 4.5",
+   "release_date": "2025-10-15",
+   "pre_2026": true
+  },
+  {
+   "key": "gemini-3.5-flash-lite",
+   "name": "Gemini 3.5 Flash-Lite",
+   "release_date": "2026-07-21",
+   "pre_2026": false
+  },
+  {
+   "key": "deepseek-v4-flash",
+   "name": "DeepSeek-V4-Flash",
+   "release_date": "2026-07-31",
+   "pre_2026": false
+  },
+  {
+   "key": "qwen3.8-27b",
+   "name": "Qwen3.8-27B",
+   "release_date": "2026-08-14",
+   "pre_2026": false
+  },
+  {
+   "key": "k2-horizon",
+   "name": "K2 Horizon 375B A23B",
+   "release_date": "2026-09-03",
+   "pre_2026": false
+  }
+ ],
+ "scores": {
+  "llama-4-scout": {
+   "ml_systems": {
+    "free": {
+     "match_cite": 0.03438762992269326,
+     "diversity_cite": 0.03892838284745574,
+     "match_idea": 0.04317535865333102,
+     "diversity_idea": 0.34913386247624956
+    },
+    "topic": {
+     "match_cite": 0.0387298991746428,
+     "diversity_cite": 0.13713043505111983,
+     "match_idea": 0.04928119665417348,
+     "diversity_idea": 0.6746950428612568
+    },
+    "landscape": {
+     "match_cite": 0.025127999255566042,
+     "diversity_cite": 0.05510849259063693,
+     "match_idea": 0.0491011891511521,
+     "diversity_idea": 0.3305153613206905
+    },
+    "frontier": {
+     "match_cite": 0.027642163957113906,
+     "diversity_cite": 0.14930556713509774,
+     "match_idea": 0.05950726239408072,
+     "diversity_idea": 0.7164223483678664
+    }
+   },
+   "code_generation": {
+    "free": {
+     "match_cite": 0.027151061351646247,
+     "diversity_cite": 0.05349485571956242,
+     "match_idea": 0.03412531321475557,
+     "diversity_idea": 0.427007262044067
+    },
+    "topic": {
+     "match_cite": 0.03294237505025807,
+     "diversity_cite": 0.1276871258544317,
+     "match_idea": 0.04208072867694086,
+     "diversity_idea": 0.6390108359379338
+    },
+    "landscape": {
+     "match_cite": 0.020981998036560322,
+     "diversity_cite": 0.024359264658015033,
+     "match_idea": 0.02193080580632585,
+     "diversity_idea": 0.352681922307748
+    },
+    "frontier": {
+     "match_cite": 0.031356680093834445,
+     "diversity_cite": 0.12848318025502048,
+     "match_idea": 0.03719336250223187,
+     "diversity_idea": 0.6420405109799964
+    }
+   },
+   "world_models": {
+    "free": {
+     "match_cite": 0.02650526948095624,
+     "diversity_cite": 0.02960312801516777,
+     "match_idea": 0.027367764019508016,
+     "diversity_idea": 0.35319567739521784
+    },
+    "topic": {
+     "match_cite": 0.034211971561206124,
+     "diversity_cite": 0.0941001558609801,
+     "match_idea": 0.044249907524241974,
+     "diversity_idea": 0.6138579277007048
+    },
+    "landscape": {
+     "match_cite": 0.019067825932304234,
+     "diversity_cite": 0.022044882564486636,
+     "match_idea": 0.01810792951610951,
+     "diversity_idea": 0.27651178186749314
+    },
+    "frontier": {
+     "match_cite": 0.03952231882237354,
+     "diversity_cite": 0.0991389861614342,
+     "match_idea": 0.039438352716009976,
+     "diversity_idea": 0.6290596896859897
+    }
+   },
+   "automated_research": {
+    "free": {
+     "match_cite": 0.06424204182511978,
+     "diversity_cite": 0.038652478854703326,
+     "match_idea": 0.04793532464900439,
+     "diversity_idea": 0.38579565548923755
+    },
+    "topic": {
+     "match_cite": 0.05437860111948186,
+     "diversity_cite": 0.13838316722037652,
+     "match_idea": 0.038501344244652146,
+     "diversity_idea": 0.6852907195723433
+    },
+    "landscape": {
+     "match_cite": 0.05139097238851809,
+     "diversity_cite": 0.03701157173351309,
+     "match_idea": 0.04368276634572972,
+     "diversity_idea": 0.38621271541863345
+    },
+    "frontier": {
+     "match_cite": 0.047089819048370694,
+     "diversity_cite": 0.1405710433819635,
+     "match_idea": 0.03323538916444287,
+     "diversity_idea": 0.6720566271170301
+    }
+   }
+  },
+  "claude-haiku-4.5": {
+   "ml_systems": {
+    "free": {
+     "match_cite": 0.04478794337060045,
+     "diversity_cite": 0.13019141174353438,
+     "match_idea": 0.016976693766834517,
+     "diversity_idea": 0.45340963272256474
+    },
+    "topic": {
+     "match_cite": 0.042401692397461534,
+     "diversity_cite": 0.3078343673425698,
+     "match_idea": 0.019947893206287527,
+     "diversity_idea": 0.7760226583326906
+    },
+    "landscape": {
+     "match_cite": 0.039740706954663536,
+     "diversity_cite": 0.12789274913100948,
+     "match_idea": 0.01479665417693981,
+     "diversity_idea": 0.45831132591290547
+    },
+    "frontier": {
+     "match_cite": 0.0441377775605562,
+     "diversity_cite": 0.2982325929853929,
+     "match_idea": 0.022973732767871503,
+     "diversity_idea": 0.8065518036669299
+    }
+   },
+   "code_generation": {
+    "free": {
+     "match_cite": 0.03898225150787169,
+     "diversity_cite": 0.17362078326332975,
+     "match_idea": 0.019319160238587308,
+     "diversity_idea": 0.5152510221979723
+    },
+    "topic": {
+     "match_cite": 0.039995203605336406,
+     "diversity_cite": 0.31676775347255715,
+     "match_idea": 0.018108257638559767,
+     "diversity_idea": 0.725110723604306
+    },
+    "landscape": {
+     "match_cite": 0.03706174392323274,
+     "diversity_cite": 0.17783855309152147,
+     "match_idea": 0.015705234994634498,
+     "diversity_idea": 0.5787236340449665
+    },
+    "frontier": {
+     "match_cite": 0.03897258630834791,
+     "diversity_cite": 0.28759014189624826,
+     "match_idea": 0.018073244279903623,
+     "diversity_idea": 0.7031883488112803
+    }
+   },
+   "world_models": {
+    "free": {
+     "match_cite": 0.0436633033083598,
+     "diversity_cite": 0.12042804418085269,
+     "match_idea": 0.021710939567706124,
+     "diversity_idea": 0.48287170821277825
+    },
+    "topic": {
+     "match_cite": 0.04944105401431329,
+     "diversity_cite": 0.22309421155260478,
+     "match_idea": 0.028547834900414328,
+     "diversity_idea": 0.6617018847771285
+    },
+    "landscape": {
+     "match_cite": 0.042894337487945244,
+     "diversity_cite": 0.12055401493836407,
+     "match_idea": 0.025887954968661756,
+     "diversity_idea": 0.4043927641261714
+    },
+    "frontier": {
+     "match_cite": 0.050310966691118744,
+     "diversity_cite": 0.22070076715988907,
+     "match_idea": 0.02412781313132765,
+     "diversity_idea": 0.6905560768189165
+    }
+   },
+   "automated_research": {
+    "free": {
+     "match_cite": 0.05859972921288988,
+     "diversity_cite": 0.12109095417757774,
+     "match_idea": 0.02790299411440533,
+     "diversity_idea": 0.28344448321411375
+    },
+    "topic": {
+     "match_cite": 0.06136473462200813,
+     "diversity_cite": 0.27857749649548025,
+     "match_idea": 0.025546539974172836,
+     "diversity_idea": 0.6763737869103597
+    },
+    "landscape": {
+     "match_cite": 0.05795236226430893,
+     "diversity_cite": 0.13201351791998067,
+     "match_idea": 0.031411560735636626,
+     "diversity_idea": 0.33686424473932464
+    },
+    "frontier": {
+     "match_cite": 0.06066513681107222,
+     "diversity_cite": 0.268204241639398,
+     "match_idea": 0.03174058919963133,
+     "diversity_idea": 0.6544435774585555
+    }
+   }
+  },
+  "gemini-3.5-flash-lite": {
+   "ml_systems": {
+    "free": {
+     "match_cite": 0.037336001239167145,
+     "diversity_cite": 0.030117431997208552,
+     "match_idea": 0.013645037247043164,
+     "diversity_idea": 0.16880965613447307
+    },
+    "topic": {
+     "match_cite": 0.04587460978187544,
+     "diversity_cite": 0.1411354127103231,
+     "match_idea": 0.022948253269137846,
+     "diversity_idea": 0.5398479078246636
+    },
+    "landscape": {
+     "match_cite": 0.03668084210831897,
+     "diversity_cite": 0.02851544093352725,
+     "match_idea": 0.013800310867652833,
+     "diversity_idea": 0.15014413344318767
+    },
+    "frontier": {
+     "match_cite": 0.04653127807300742,
+     "diversity_cite": 0.14049461628485055,
+     "match_idea": 0.02317003010462707,
+     "diversity_idea": 0.5328314349035513
+    }
+   },
+   "code_generation": {
+    "free": {
+     "match_cite": 0.03722064969738411,
+     "diversity_cite": 0.0628882976465094,
+     "match_idea": 0.015192264473374855,
+     "diversity_idea": 0.15397328218667838
+    },
+    "topic": {
+     "match_cite": 0.0423026796474253,
+     "diversity_cite": 0.17194775052716496,
+     "match_idea": 0.021852584997310937,
+     "diversity_idea": 0.49275761747593194
+    },
+    "landscape": {
+     "match_cite": 0.03878438047951124,
+     "diversity_cite": 0.06065934532486096,
+     "match_idea": 0.014711319096597397,
+     "diversity_idea": 0.1655824399882735
+    },
+    "frontier": {
+     "match_cite": 0.04230897460395776,
+     "diversity_cite": 0.1686043220446923,
+     "match_idea": 0.018482532073525567,
+     "diversity_idea": 0.5238269856823478
+    }
+   },
+   "world_models": {
+    "free": {
+     "match_cite": 0.04886056704935302,
+     "diversity_cite": 0.04761694633929114,
+     "match_idea": 0.03375216836805557,
+     "diversity_idea": 0.1876306168974773
+    },
+    "topic": {
+     "match_cite": 0.053275409345117965,
+     "diversity_cite": 0.13352900296203335,
+     "match_idea": 0.038556706225287986,
+     "diversity_idea": 0.5252375772700921
+    },
+    "landscape": {
+     "match_cite": 0.044373291894529945,
+     "diversity_cite": 0.036153607405758084,
+     "match_idea": 0.023093125714626756,
+     "diversity_idea": 0.1435002633171647
+    },
+    "frontier": {
+     "match_cite": 0.0528088199837052,
+     "diversity_cite": 0.12899405569162464,
+     "match_idea": 0.038652159004501016,
+     "diversity_idea": 0.5267802032023108
+    }
+   },
+   "automated_research": {
+    "free": {
+     "match_cite": 0.07180570396202822,
+     "diversity_cite": 0.05524387308007126,
+     "match_idea": 0.02222216401977237,
+     "diversity_idea": 0.12916650562799836
+    },
+    "topic": {
+     "match_cite": 0.06578850608473477,
+     "diversity_cite": 0.20219622193333014,
+     "match_idea": 0.02141654985226344,
+     "diversity_idea": 0.6220679077622504
+    },
+    "landscape": {
+     "match_cite": 0.07182466631885728,
+     "diversity_cite": 0.051232766783828466,
+     "match_idea": 0.021387790761460388,
+     "diversity_idea": 0.09861443377718393
+    },
+    "frontier": {
+     "match_cite": 0.0633913283241729,
+     "diversity_cite": 0.20566035918917622,
+     "match_idea": 0.022760181689617333,
+     "diversity_idea": 0.6331122988134589
+    }
+   }
+  },
+  "deepseek-v4-flash": {
+   "ml_systems": {
+    "free": {
+     "match_cite": 0.039388881683689606,
+     "diversity_cite": 0.07652349499056216,
+     "match_idea": 0.009247511384466696,
+     "diversity_idea": 0.33134634945987174
+    },
+    "topic": {
+     "match_cite": 0.046325094190673925,
+     "diversity_cite": 0.3387717476957086,
+     "match_idea": 0.011824173209499477,
+     "diversity_idea": 0.6764845277082963
+    },
+    "landscape": {
+     "match_cite": 0.03529635834818054,
+     "diversity_cite": 0.10818663885774363,
+     "match_idea": 0.010461987699444225,
+     "diversity_idea": 0.29330722742106297
+    },
+    "frontier": {
+     "match_cite": 0.04781976618482674,
+     "diversity_cite": 0.4215106289306566,
+     "match_idea": 0.00938396582622549,
+     "diversity_idea": 0.825537804615961
+    }
+   },
+   "code_generation": {
+    "free": {
+     "match_cite": 0.03508838578410583,
+     "diversity_cite": 0.13003832310210653,
+     "match_idea": 0.007850938922065516,
+     "diversity_idea": 0.35379070066591145
+    },
+    "topic": {
+     "match_cite": 0.046320360555032136,
+     "diversity_cite": 0.3746234282596769,
+     "match_idea": 0.009949752787076573,
+     "diversity_idea": 0.6429850315136032
+    },
+    "landscape": {
+     "match_cite": 0.03623455143203116,
+     "diversity_cite": 0.14237383321468466,
+     "match_idea": 0.009605373440736562,
+     "diversity_idea": 0.38464986328602857
+    },
+    "frontier": {
+     "match_cite": 0.04583544699060566,
+     "diversity_cite": 0.4696102995209661,
+     "match_idea": 0.009957357139118574,
+     "diversity_idea": 0.7725275541599651
+    }
+   },
+   "world_models": {
+    "free": {
+     "match_cite": 0.047659463246735374,
+     "diversity_cite": 0.13495811554684717,
+     "match_idea": 0.01449314344841421,
+     "diversity_idea": 0.42789493905216447
+    },
+    "topic": {
+     "match_cite": 0.051560595891256174,
+     "diversity_cite": 0.325077670664281,
+     "match_idea": 0.017600993939703914,
+     "diversity_idea": 0.6906395412509666
+    },
+    "landscape": {
+     "match_cite": 0.0422109544965645,
+     "diversity_cite": 0.1300326036871779,
+     "match_idea": 0.018992500256929255,
+     "diversity_idea": 0.4058035011834378
+    },
+    "frontier": {
+     "match_cite": 0.04978979685430374,
+     "diversity_cite": 0.39831998323942686,
+     "match_idea": 0.014137785969983037,
+     "diversity_idea": 0.7138354815742807
+    }
+   },
+   "automated_research": {
+    "free": {
+     "match_cite": 0.06402301540236462,
+     "diversity_cite": 0.07574285386094151,
+     "match_idea": 0.016697054818444218,
+     "diversity_idea": 0.23159687257585992
+    },
+    "topic": {
+     "match_cite": 0.07720450213994608,
+     "diversity_cite": 0.25390313545510085,
+     "match_idea": 0.020855473300047722,
+     "diversity_idea": 0.5580024708557773
+    },
+    "landscape": {
+     "match_cite": 0.05327209697128759,
+     "diversity_cite": 0.09549329370441625,
+     "match_idea": 0.018740208682210626,
+     "diversity_idea": 0.22504325079297727
+    },
+    "frontier": {
+     "match_cite": 0.07018884745499036,
+     "diversity_cite": 0.3616500175623826,
+     "match_idea": 0.01826538529447896,
+     "diversity_idea": 0.7359289387778922
+    }
+   }
+  },
+  "qwen3.8-27b": {
+   "ml_systems": {
+    "free": {
+     "match_cite": 0.03964360615736667,
+     "diversity_cite": 0.08215164337705802,
+     "match_idea": 0.009535106213292345,
+     "diversity_idea": 0.3191711192416057
+    },
+    "topic": {
+     "match_cite": 0.04893182271622725,
+     "diversity_cite": 0.32361226309636326,
+     "match_idea": 0.013841854573298779,
+     "diversity_idea": 0.7424805845341886
+    },
+    "landscape": {
+     "match_cite": 0.03703624090423186,
+     "diversity_cite": 0.1091618154137142,
+     "match_idea": 0.009973960551721683,
+     "diversity_idea": 0.37266511872416574
+    },
+    "frontier": {
+     "match_cite": 0.04940177853722251,
+     "diversity_cite": 0.37974596586966114,
+     "match_idea": 0.014855531620727787,
+     "diversity_idea": 0.7802577528142238
+    }
+   },
+   "code_generation": {
+    "free": {
+     "match_cite": 0.044398410850176234,
+     "diversity_cite": 0.17377433071667536,
+     "match_idea": 0.011131661973188616,
+     "diversity_idea": 0.4590590227594584
+    },
+    "topic": {
+     "match_cite": 0.04208989470264059,
+     "diversity_cite": 0.40347218385403766,
+     "match_idea": 0.01397051187399394,
+     "diversity_idea": 0.6693993605149067
+    },
+    "landscape": {
+     "match_cite": 0.0347296555287676,
+     "diversity_cite": 0.16182521419594734,
+     "match_idea": 0.010139030152320844,
+     "diversity_idea": 0.45422377111477896
+    },
+    "frontier": {
+     "match_cite": 0.050530911170468214,
+     "diversity_cite": 0.46527816332006006,
+     "match_idea": 0.013297396916424349,
+     "diversity_idea": 0.6709014924128284
+    }
+   },
+   "world_models": {
+    "free": {
+     "match_cite": 0.05319854051441865,
+     "diversity_cite": 0.13298072327524496,
+     "match_idea": 0.015078996045633656,
+     "diversity_idea": 0.3734801089086799
+    },
+    "topic": {
+     "match_cite": 0.055855234810736815,
+     "diversity_cite": 0.3611686089551139,
+     "match_idea": 0.021981482026575103,
+     "diversity_idea": 0.6633774037456996
+    },
+    "landscape": {
+     "match_cite": 0.047300293947437184,
+     "diversity_cite": 0.11276886183844163,
+     "match_idea": 0.015892712047516803,
+     "diversity_idea": 0.2558348075989093
+    },
+    "frontier": {
+     "match_cite": 0.059090979884306005,
+     "diversity_cite": 0.36936746631632833,
+     "match_idea": 0.02347324207093814,
+     "diversity_idea": 0.6575261066323657
+    }
+   },
+   "automated_research": {
+    "free": {
+     "match_cite": 0.0630302467574715,
+     "diversity_cite": 0.06936121988460323,
+     "match_idea": 0.01785112809683977,
+     "diversity_idea": 0.18014195464257998
+    },
+    "topic": {
+     "match_cite": 0.07172774313615149,
+     "diversity_cite": 0.29075569172156096,
+     "match_idea": 0.0266330040818578,
+     "diversity_idea": 0.5913518810662614
+    },
+    "landscape": {
+     "match_cite": 0.06577908541584211,
+     "diversity_cite": 0.08981312475296857,
+     "match_idea": 0.018584839918782497,
+     "diversity_idea": 0.22320464817206953
+    },
+    "frontier": {
+     "match_cite": 0.07715340268404396,
+     "diversity_cite": 0.310517676302826,
+     "match_idea": 0.023914602531358502,
+     "diversity_idea": 0.6381499082132687
+    }
+   }
+  },
+  "k2-horizon": {
+   "ml_systems": {
+    "free": {
+     "match_cite": 0.0420621633127508,
+     "diversity_cite": 0.0929794651156606,
+     "match_idea": 0.009402553325273818,
+     "diversity_idea": 0.486280622682558
+    },
+    "topic": {
+     "match_cite": 0.04435108799183693,
+     "diversity_cite": 0.3569949559181719,
+     "match_idea": 0.011910780648666701,
+     "diversity_idea": 0.8281544810800654
+    },
+    "landscape": {
+     "match_cite": 0.04090811268329017,
+     "diversity_cite": 0.10312159288005134,
+     "match_idea": 0.010989632645907679,
+     "diversity_idea": 0.519594232142158
+    },
+    "frontier": {
+     "match_cite": 0.04593496150953741,
+     "diversity_cite": 0.348518048489511,
+     "match_idea": 0.012722545250086767,
+     "diversity_idea": 0.8457789133288599
+    }
+   },
+   "code_generation": {
+    "free": {
+     "match_cite": 0.038201419372122424,
+     "diversity_cite": 0.17956032403959787,
+     "match_idea": 0.010256757261858752,
+     "diversity_idea": 0.6097242371588693
+    },
+    "topic": {
+     "match_cite": 0.04555062394474489,
+     "diversity_cite": 0.3682734368575698,
+     "match_idea": 0.010490221135514052,
+     "diversity_idea": 0.7698599107707691
+    },
+    "landscape": {
+     "match_cite": 0.03734156393927374,
+     "diversity_cite": 0.21354150577747316,
+     "match_idea": 0.011033550101432508,
+     "diversity_idea": 0.669222372575256
+    },
+    "frontier": {
+     "match_cite": 0.042382533425206745,
+     "diversity_cite": 0.381415195552617,
+     "match_idea": 0.01029931950088794,
+     "diversity_idea": 0.7750480126706851
+    }
+   },
+   "world_models": {
+    "free": {
+     "match_cite": 0.05014000570761977,
+     "diversity_cite": 0.1415911314427599,
+     "match_idea": 0.015644663213888032,
+     "diversity_idea": 0.6568176703995445
+    },
+    "topic": {
+     "match_cite": 0.04974542086770677,
+     "diversity_cite": 0.29698812314541684,
+     "match_idea": 0.013233725763830485,
+     "diversity_idea": 0.8048445113596965
+    },
+    "landscape": {
+     "match_cite": 0.04513064242677237,
+     "diversity_cite": 0.1200071398145867,
+     "match_idea": 0.016546202933276855,
+     "diversity_idea": 0.5308595076693983
+    },
+    "frontier": {
+     "match_cite": 0.05050867234751582,
+     "diversity_cite": 0.2945196310615415,
+     "match_idea": 0.01517256719027967,
+     "diversity_idea": 0.8276160051368213
+    }
+   },
+   "automated_research": {
+    "free": {
+     "match_cite": 0.07207106742242907,
+     "diversity_cite": 0.10521110355138644,
+     "match_idea": 0.01798688796545576,
+     "diversity_idea": 0.38375868602789986
+    },
+    "topic": {
+     "match_cite": 0.0703977809900351,
+     "diversity_cite": 0.33366799844744327,
+     "match_idea": 0.020884651287836568,
+     "diversity_idea": 0.8026317287311611
+    },
+    "landscape": {
+     "match_cite": 0.06751214563767428,
+     "diversity_cite": 0.10395326818065456,
+     "match_idea": 0.018721574525654452,
+     "diversity_idea": 0.39870719247379993
+    },
+    "frontier": {
+     "match_cite": 0.06820260058920465,
+     "diversity_cite": 0.3412777980748703,
+     "match_idea": 0.023618532718736575,
+     "diversity_idea": 0.7802028398806846
+    }
+   }
+  }
+ }
+}

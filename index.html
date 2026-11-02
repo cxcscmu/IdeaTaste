@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IdeaTaste</title>
+  <meta name="description" content="IdeaTaste: Do LLMs share the research taste of human researchers? A benchmark that scores an LLM by how closely the research proposals it writes from a literature snapshot frozen at 2025 match the work the same communities published in 2026.">
+  <meta property="og:title" content="IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?">
+  <meta property="og:description" content="A benchmark for research taste: 6 language models, 4 research areas, over 90,000 proposals, compared with what the communities published in 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=26">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23C41230'/%3E%3Ctext x='16' y='21' font-family='Georgia,serif' font-weight='700' font-size='13' fill='%23fff' text-anchor='middle' textLength='24' lengthAdjust='spacingAndGlyphs'%3ECMU%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top"><img class="brand-logo" src="assets/img/logo-cmu.svg" alt="Carnegie Mellon University"><span class="brand-sep" aria-hidden="true"></span>IdeaTaste</a>
+  <nav class="tabnav" id="tabs" role="tablist" aria-label="Sections">
+    <span class="tabnav-group">
+      <a role="tab" href="#idea" data-tab="idea"><span class="tn">1</span>Idea</a>
+      <span class="tn-arrow" aria-hidden="true">›</span>
+      <a role="tab" href="#experiments" data-tab="experiments"><span class="tn">2</span>Experiments</a>
+      <span class="tn-arrow" aria-hidden="true">›</span>
+      <a role="tab" href="#analysis" data-tab="analysis"><span class="tn">3</span>Analysis</a>
+    </span>
+    <a role="tab" href="#live" data-tab="live" class="tab-live"><span class="pulse"></span>Live tracker</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+</header>
+
+<main id="top">
+
+<!-- ============================================================== hero -->
+<section class="hero" id="hero">
+  <p class="eyebrow">A benchmark for research taste</p>
+  <h1><span class="wordmark">IdeaTaste</span><span class="subtitle">Do LLMs Share the Research Taste of Human Researchers?</span></h1>
+
+  <p class="authors">
+    <span><a href="https://zhongshsh.github.io/" target="_blank" rel="noopener">Shanshan Zhong</a><sup>1</sup></span>
+    <span><a href="https://xuchen0427.github.io/" target="_blank" rel="noopener">Chen Xu</a><sup>1</sup></span>
+    <span><a href="https://ethanning.github.io/" target="_blank" rel="noopener">Jingjie Ning</a><sup>1</sup></span>
+    <span><a href="https://hunterhector.github.io/" target="_blank" rel="noopener">Zhengzhong Liu</a><sup>2</sup></span>
+    <span><a href="https://aviralkumar2907.github.io/" target="_blank" rel="noopener">Aviral Kumar</a><sup>1</sup></span>
+    <span><a href="https://www.cs.cmu.edu/~cx/" target="_blank" rel="noopener">Chenyan Xiong</a><sup>1</sup></span>
+  </p>
+  <p class="affiliations">
+    <span><img class="logo" src="assets/img/logo-cmu.svg" alt="" aria-hidden="true"><sup>1</sup>Carnegie Mellon University</span>
+    <span><img class="logo mbz" src="assets/img/logo-mbzuai.png" alt="" aria-hidden="true"><sup>2</sup>Mohamed bin Zayed University of Artificial Intelligence</span>
+  </p>
+
+  <div class="links">
+    <a class="button primary" href="assets/paper.pdf" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg>Paper</a>
+    <a class="button" href="https://github.com/cxcscmu/IdeaTaste">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a>
+    <a class="button" href="https://huggingface.co/datasets/cx-cmu/IdeaTaste">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Data</a>
+    <a class="button live-button" href="#live" data-goto="live">
+      <span class="pulse" aria-hidden="true"></span>
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Live leaderboard</a>
+  </div>
+</section>
+
+<!-- ============================================================== tab bar -->
+<!-- (navigation lives in the sticky top bar) -->
+
+<!-- ============================================================== VIEW 1: idea -->
+<div class="view" id="view-idea" data-view="idea" role="tabpanel">
+<section id="video">
+  <div class="video-head">
+    <h3 class="subhead">Watch the overview</h3>
+    <div class="segmented" id="video-lang" role="tablist">
+      <button type="button" data-lang="en" aria-checked="true">English</button>
+      <button type="button" data-lang="zh" aria-checked="false">中文</button>
+    </div>
+  </div>
+  <figure class="video-wrap">
+    <video id="overview-video" controls playsinline preload="metadata" src="assets/video/overview-en.mp4"></video>
+    <figcaption class="note">A short walkthrough of the benchmark and the main findings. The same talk is available in English and 中文 — use the switch above.</figcaption>
+  </figure>
+</section>
+
+<section class="view-head">
+  <p class="eyebrow">01 · Idea</p>
+  <h2>Do LLM agents propose the research a community goes on to pursue?</h2>
+  <p class="lead">Freeze the literature at the end of 2025 and let LLM agents read it and write research proposals. In 2026 the same community publishes. Taste is how much the two overlap, in what they cite and in what they propose.</p>
+  <ol class="tldr steps3">
+    <li><b>Freeze</b> the literature at 2025-12-31.</li>
+    <li><b>Propose</b>: LLM agents write research proposals from that snapshot.</li>
+    <li><b>Compare</b> with what the community published in 2026.</li>
+  </ol>
+  <figure class="overview" aria-labelledby="overview-caption">
+    <svg viewBox="0 0 980 330" role="img" aria-label="Human researchers and LLM agents read the same literature corpus up to 2025. Humans cite and publish 2026 papers; LLM agents retrieve, cite and write proposals. The two are compared at the level of literature (citations) and ideas (papers versus proposals) by matching, and AI populations are also scored for diversity.">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 10 5 0 10z" class="ov-arrowhead"/>
+        </marker>
+      </defs>
+      <!-- column headers -->
+      <text class="ov-col" x="505" y="24" text-anchor="middle">Level 1 · Literature</text>
+      <text class="ov-col" x="820" y="24" text-anchor="middle">Level 2 · Ideas</text>
+      <!-- cutoff line -->
+      <line class="ov-cutoff" x1="150" y1="165" x2="975" y2="165"/>
+      <text class="ov-cutoff-label" x="160" y="158">frozen at 2025-12-31</text>
+      <!-- corpus -->
+      <g class="ov-corpus">
+        <rect x="18" y="112" width="104" height="106" rx="14"/>
+        <rect x="40" y="132" width="50" height="62" rx="5" class="ov-paper-back"/>
+        <rect x="50" y="140" width="50" height="62" rx="5" class="ov-paper"/>
+        <path d="M60 155h30M60 165h30M60 175h30M60 185h20" class="ov-lines"/>
+        <text x="70" y="244" text-anchor="middle" class="ov-label">Literature</text>
+        <text x="70" y="262" text-anchor="middle" class="ov-sub">corpus ≤ 2025</text>
+      </g>
+      <!-- human lane -->
+      <path class="ov-flow human" d="M122 140 C 170 140, 175 82, 228 82" marker-end="url(#arrow)"/>
+      <g class="ov-actor human" transform="translate(236 52)">
+        <rect width="150" height="60" rx="30"/>
+        <circle cx="28" cy="24" r="6"/><path d="M18 42c1-7 5-10 10-10s9 3 10 10"/>
+        <text x="90" y="28" text-anchor="middle">Human</text>
+        <text x="90" y="44" text-anchor="middle">community</text>
+      </g>
+      <path class="ov-flow human" d="M386 82 H 428" marker-end="url(#arrow)"/>
+      <rect class="ov-node human" x="436" y="56" width="140" height="52" rx="26"/>
+      <text class="ov-node-text" x="506" y="87" text-anchor="middle">Citations</text>
+      <path class="ov-flow human" d="M576 82 H 742" marker-end="url(#arrow)"/>
+      <text class="ov-edge" x="660" y="72" text-anchor="middle">writes</text>
+      <rect class="ov-node human" x="750" y="56" width="140" height="52" rx="26"/>
+      <text class="ov-node-text" x="820" y="87" text-anchor="middle">2026 papers</text>
+      <!-- AI lane -->
+      <path class="ov-flow ai" d="M122 190 C 170 190, 175 248, 228 248" marker-end="url(#arrow)"/>
+      <g class="ov-actor ai" transform="translate(236 218)">
+        <rect width="150" height="60" rx="30"/>
+        <rect x="18" y="17" width="20" height="16" rx="5"/><path d="M24 25h.01M32 25h.01"/><path d="M28 17v-5"/><path d="M17 44c1-6 5-8 11-8s10 2 11 8"/>
+        <text x="90" y="28" text-anchor="middle">LLM</text>
+        <text x="90" y="44" text-anchor="middle">agents</text>
+      </g>
+      <path class="ov-flow ai" d="M386 248 H 428" marker-end="url(#arrow)"/>
+      <rect class="ov-node ai" x="436" y="222" width="140" height="52" rx="26"/>
+      <text class="ov-node-text" x="506" y="253" text-anchor="middle">Citations</text>
+      <path class="ov-flow ai" d="M576 248 H 742" marker-end="url(#arrow)"/>
+      <text class="ov-edge" x="660" y="238" text-anchor="middle">proposes</text>
+      <rect class="ov-node ai" x="750" y="222" width="140" height="52" rx="26"/>
+      <text class="ov-node-text" x="820" y="253" text-anchor="middle">Proposals</text>
+      <!-- match connectors -->
+      <path class="ov-match" d="M506 112 V 218" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect class="ov-pill" x="470" y="151" width="72" height="28" rx="14"/>
+      <text class="ov-pill-text" x="506" y="170" text-anchor="middle">Match</text>
+      <path class="ov-match" d="M820 112 V 218" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect class="ov-pill" x="784" y="151" width="72" height="28" rx="14"/>
+      <text class="ov-pill-text" x="820" y="170" text-anchor="middle">Match</text>
+      <!-- diversity loops -->
+      <path class="ov-loop" d="M480 274 C 470 312, 542 312, 532 278" marker-end="url(#arrow)"/>
+      <text class="ov-edge" x="506" y="322" text-anchor="middle">Diversity</text>
+      <path class="ov-loop" d="M794 274 C 784 312, 856 312, 846 278" marker-end="url(#arrow)"/>
+      <text class="ov-edge" x="820" y="322" text-anchor="middle">Diversity</text>
+    </svg>
+    <figcaption id="overview-caption">LLM agents see only the literature up to 2025. Their proposals are compared with the papers the same community published in 2026, on what they cite and what they propose.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================================================== abstract -->
+<section class="prose" id="abstract">
+  <h2>Abstract</h2>
+  <p>Research taste, the judgment of what to read, which problems to pursue, and which methods to try, increasingly shapes the work of AI scientists, yet it remains far less understood than their ability to execute research. We introduce <strong>IdeaTaste</strong>, a benchmark that scores an LLM by how closely the research proposals it writes from a literature snapshot frozen at 2025 match the work the same communities published in 2026. Our experiments span six contemporary language models and four research areas from established to emerging fields, covering more than 90,000 proposals in total.</p>
+  <p>LLM agents fall well short of human communities in both the literature they cite and the ideas they state, reaching about 26% of the human level on citation matching and only 18% on idea matching. Their populations can cite as diversely as a community and take up its tasks and methods, yet rarely arrive at the concrete approaches and research plans it pursues. Neither richer field context nor larger populations substantially close this gap. In blinded expert review, AI proposals trail the 2026 papers least in presentation and most in expected success, echoing their gap in concrete approaches, and those whose ideas no human paper shares fare worst, suggesting weaker directions rather than overlooked opportunities. These results indicate that the main bottleneck in AI research taste lies less in finding the directions a community works on than in turning them into the concrete approaches it goes on to pursue.</p>
+</section>
+
+<!-- ============================================================== benchmark -->
+<section id="benchmark">
+  <h2>The benchmark</h2>
+  <p class="lead">Writing research means two choices: which prior work to build on, and what idea to state in relation to it. IdeaTaste compares LLM agents with a human community on both, using what the community actually did after the cutoff as the reference.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Frozen literature, future reference</h3>
+      <p>For each area, papers published through 2025 form the corpus <em>U</em> that LLM agents search and cite. Papers published January–August 2026 form the human reference <em>H</em>. Both sets grow by following citations out from 20–22 hand-picked landmark papers per area. The reference is screened against a written area definition, and surveys are removed.</p>
+      <table class="mini" id="area-table">
+        <thead><tr><th>Area</th><th>Corpus U</th><th>Reference H</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </article>
+    <article class="card">
+      <h3>Two levels, four metrics</h3>
+      <p>Each document is described by its <strong>citation set</strong> (cited papers in <em>U</em>) and by an <strong>idea summary</strong> in five slots, extracted from its abstract: contribution type, problem, motivation, proposed approach and research plan.</p>
+      <ul class="metrics">
+        <li><b>Match-Cite</b>: harmonic mean of the nearest-neighbour Jaccard similarity of citation sets, proposals→papers and papers→proposals.</li>
+        <li><b>Diversity-Cite</b>: sufficiency (citing enough) × spread (not citing the same papers).</li>
+        <li><b>Match-Idea</b>: the weighted share of 2026-paper slots that some retrieved proposal matches, judged slot by slot. Rarely matched slots weigh more.</li>
+        <li><b>Diversity-Idea</b>: one minus the weighted share of a proposal's slots that its neighbours already state.</li>
+      </ul>
+      <p class="note">Scoring the 2026 papers against one another gives the <strong>human level</strong> that every population is read against.</p>
+    </article>
+  </div>
+
+  <h3 class="subhead">One LLM agent, four methods</h3>
+  <p class="lead narrow">All methods share one ReAct agent with a 20-step budget: <span class="tools"><code>plan</code><code>search</code><code>read_papers</code><code>draft</code><code>summary</code><code>proposal</code></span>. It can cite only papers it has retrieved. The methods differ only in what the agent knows about its area.</p>
+  <div class="grid four methods-grid">
+    <article class="method" data-method="free"><span class="swatch"></span><h4>Free</h4><p>Only told it is a researcher in the area. Reveals what it pursues without a prior.</p></article>
+    <article class="method" data-method="topic"><span class="swatch"></span><h4>Topic</h4><p>Assigned one research topic, allocated in proportion to the corpus with recent years upweighted.</p></article>
+    <article class="method" data-method="landscape"><span class="swatch"></span><h4>Landscape</h4><p>Sees the area's most common task tags, method tags and task–method pairs with their shares, and can retrieve papers by tag.</p></article>
+    <article class="method" data-method="frontier"><span class="swatch"></span><h4>Frontier</h4><p>Topic, run in rounds. Later rounds can search and read earlier rounds' proposals and research traces.</p></article>
+  </div>
+
+  <h3 class="subhead">Takeaways</h3>
+  <div class="grid two takeaways">
+    <article class="takeaway">
+      <span class="take-n">01</span>
+      <h4>Taste can be measured against the future</h4>
+      <p>Instead of asking a judge whether an idea sounds novel, IdeaTaste asks whether the community went on to pursue it. The 2026 papers are the reference, and scoring them against one another sets the human level.</p>
+    </article>
+    <article class="takeaway">
+      <span class="take-n">02</span>
+      <h4>LLM agents stay far below that level</h4>
+      <p>Across 96 populations they reach about <b>26%</b> of the human level on citation matching and <b>18%</b> on idea matching, even though their citations are as spread out as a community's.</p>
+    </article>
+    <article class="takeaway">
+      <span class="take-n">03</span>
+      <h4>The bottleneck is the approach, not the direction</h4>
+      <p>Populations take up the problems and motivations a community works on, yet almost never arrive at the concrete approaches and research plans it pursues.</p>
+    </article>
+    <article class="takeaway">
+      <span class="take-n">04</span>
+      <h4>Scaling context or population does not fix it</h4>
+      <p>Richer field context barely moves matching, and growing a population to the size of the human reference lifts it only gently. Unmatched proposals also fare worst in blinded expert review.</p>
+    </article>
+  </div>
+
+  <a class="bridge" href="#live" data-goto="live" data-live-sub="watch">
+    <span class="bridge-k">Keep going in Live →</span>
+    <span>The reference keeps growing. Every proposal written from the 2025 snapshot stays on a <b>watchlist</b> until a later paper does the same thing.</span>
+  </a>
+  <div class="next-row"><span></span><a class="button primary next" href="#experiments" data-goto="experiments">Next: 2 · Experiments →</a></div>
+</section>
+</div>
+
+<!-- ============================================================== VIEW 2: experiments -->
+<div class="view" id="view-experiments" data-view="experiments" role="tabpanel" hidden>
+<section class="view-head">
+  <p class="eyebrow">02 · Experiments</p>
+  <h2>LLM agents reach a quarter of the human level</h2>
+  <p class="lead">96 populations (6 models × 4 methods × 4 areas), 300 proposals each, scored against the 2026 papers.</p>
+  <ul class="tldr">
+    <li><b>Citations:</b> LLMs reach ~26% of the human level.</li>
+    <li><b>Ideas:</b> only ~18%; they find the right problems but rarely the right approaches.</li>
+    <li><b>How to read the table:</b> higher is better; the amber tick is the human level.</li>
+  </ul>
+</section>
+
+<!-- ============================================================== leaderboard -->
+<section id="leaderboard" class="wide">
+  <h3>Leaderboard <span class="edition-tag">edition 2026.10 · paper</span></h3>
+  <p class="lead">Each population holds 300 proposals. Models are ordered by release date; the two released before 2026 cannot have seen any 2026 paper. Click a column to sort.</p>
+
+  <div class="controls" role="group" aria-label="Leaderboard filters">
+    <div class="segmented" id="area-filter" role="radiogroup" aria-label="Area"></div>
+    <div class="segmented" id="scale-filter" role="radiogroup" aria-label="Scale">
+      <button type="button" role="radio" data-value="raw" aria-checked="true">Score (%)</button>
+      <button type="button" role="radio" data-value="relative" aria-checked="false">% of human</button>
+    </div>
+    <div class="segmented" id="method-filter" role="group" aria-label="Methods"></div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="board" id="board">
+      <thead>
+        <tr>
+          <th data-sort="model" class="left">Model</th>
+          <th data-sort="method" class="left">Method</th>
+          <th data-sort="match_cite">Match<span>Cite</span></th>
+          <th data-sort="match_idea">Match<span>Idea</span></th>
+          <th data-sort="diversity_cite">Diversity<span>Cite</span></th>
+          <th data-sort="diversity_idea">Diversity<span>Idea</span></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="note" id="board-note"></p>
+</section>
+
+<section id="findings">
+
+  <article class="finding">
+    <div class="finding-text">
+      <span class="kicker">01</span>
+      <h3>The gap is in the ideas, not the reading</h3>
+      <p>Averaged over all 96 populations, LLM agents reach about a quarter of the human level on citation matching and under a fifth on idea matching. Their citations are as spread out as a community's, often more so, but their ideas repeat one another.</p>
+    </div>
+    <figure class="chart" id="chart-gap" aria-label="Share of the human level per metric"></figure>
+  </article>
+
+  <article class="finding">
+    <div class="finding-text">
+      <span class="kicker">02</span>
+      <h3>Same problems, different approaches</h3>
+      <p>Split by slot, populations match the problems and motivations of human papers many times more often than their approaches and research plans. Almost no human approach or plan finds a counterpart among the proposals. This holds for a model trained before 2026 (Llama 4 Scout) and for one released after (DeepSeek-V4-Flash).</p>
+    </div>
+    <figure class="chart" id="chart-slots" aria-label="Per-slot idea matching"></figure>
+  </article>
+  <a class="bridge" href="#live" data-goto="live" data-live-sub="trend">
+    <span class="bridge-k">Keep going in Live →</span>
+    <span>Is the gap closing? Each new edition adds the latest models and places them against their release date.</span>
+  </a>
+  <div class="next-row"><a class="button" href="#idea" data-goto="idea">← 1 · Idea</a><a class="button primary next" href="#analysis" data-goto="analysis">Next: 3 · Analysis →</a></div>
+</section>
+</div>
+
+<!-- ============================================================== VIEW 3: analysis -->
+<div class="view" id="view-analysis" data-view="analysis" role="tabpanel" hidden>
+<section class="view-head">
+  <p class="eyebrow">03 · Analysis</p>
+  <h2>Where the gap comes from, and whether it matters</h2>
+  <ul class="tldr">
+    <li><b>More context?</b> Barely helps matching.</li>
+    <li><b>More proposals?</b> Helps slowly, still far below humans.</li>
+    <li><b>Are unmatched ideas hidden gems?</b> No, experts rate them lowest.</li>
+  </ul>
+</section>
+<section class="findings">
+
+  <article class="finding">
+    <div class="finding-text">
+      <span class="kicker">03</span>
+      <h3>More context does not help</h3>
+      <p>Matching barely moves across methods, while diversity changes several-fold. Giving a direction (Topic, Frontier) spreads a population out; showing the full map of an area (Landscape) helps least of all.</p>
+    </div>
+    <figure class="chart" id="chart-methods" aria-label="Matching as a share of the human level, by method"></figure>
+  </article>
+
+  <article class="finding">
+    <div class="finding-text">
+      <span class="kicker">04</span>
+      <h3>More proposals help, slowly</h3>
+      <p>Growing Free and Topic populations from 300 proposals to the size of the human reference (3.8–17× larger) lifts matching only gently. Even at equal size it stays well below the human level.</p>
+    </div>
+    <figure class="chart image">
+      <img src="assets/img/scale_curves.png" alt="Matching against population size for Gemini 3.5 Flash-Lite and DeepSeek-V4-Flash in four areas; curves rise gently and level off well below the human level.">
+    </figure>
+  </article>
+
+  <article class="finding">
+    <div class="finding-text">
+      <span class="kicker">05</span>
+      <h3>Unmatched proposals are weaker, not overlooked</h3>
+      <p>Eleven reviewers scored 192 papers and proposals without knowing their source. Proposals trail the 2026 papers by only 4 points on presentation but 20 on expected success, so the gap lies less in how they are written than in whether they would work. It is widest for proposals whose ideas no human paper shares.</p>
+    </div>
+    <figure class="chart" id="chart-human" aria-label="Blind expert review, human papers versus AI proposals"></figure>
+  </article>
+
+  <a class="cta-survey" href="https://shanshanzhong.me/survey-2026/?s=quality" target="_blank" rel="noopener">
+    <span class="cta-i" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3h6v3H9z" class="c-clip"/><path class="c-t1" d="M8 11h8"/><path class="c-t2" d="M8 15h5"/><path class="c-pen" d="M19.5 13.5l2 2-4.5 4.5H15v-2z"/></svg>
+    </span>
+    <span class="cta-main">
+      <span class="cta-eyebrow">Call for reviewers · open now</span>
+      <span class="cta-h">Score ideas yourself, blind.</span>
+      <span class="cta-b">You see one idea at a time, without knowing whether it comes from a 2026 paper or an LLM agent, and rate it the way you would in review. Responses extend the human review set in the next edition.</span>
+      <span class="cta-meta"><span class="cta-chip">~10 minutes</span><span class="cta-chip">no sign-up</span><span class="cta-chip">fully anonymous</span></span>
+    </span>
+    <span class="cta-go">Be a reviewer <b>→</b></span>
+  </a>
+</section>
+
+<!-- ============================================================== cases -->
+<section id="cases">
+  <h2>Same problem, different mechanism</h2>
+  <p class="lead">For two 2026 papers, two proposals from one model share the problem. Only one of them also matches the approach.</p>
+  <div class="grid two">
+    <article class="case">
+      <p class="case-problem">Fetching uncached mixture-of-experts experts causes substantial I/O overhead.</p>
+      <div class="doc human"><span class="tag">2026 paper</span><b><a href="https://arxiv.org/abs/2605.27081">ReMoE</a></b> Fine-tune the router to favor recently used experts, reducing transfers without adding inference-time computation.</div>
+      <div class="doc differ"><span class="tag">Qwen3.8-27B · Frontier</span><b>Approach differs.</b> Predict expert demand from prompt topics, then prefetch experts and coordinate caching without changing the model.</div>
+      <div class="doc match"><span class="tag">Qwen3.8-27B · Topic</span><b>Approach matches.</b> Train only the router to increase expert reuse over consecutive tokens while preserving language-model performance.</div>
+    </article>
+    <article class="case">
+      <p class="case-problem">Pretrained world models must adapt to changing environments while retaining prior capabilities.</p>
+      <div class="doc human"><span class="tag">2026 paper</span><b><a href="https://doi.org/10.1109/LRA.2026.3688061">SPREAD</a></b> Freeze the pretrained model and update low-rank adapters online for rapid adaptation without replay.</div>
+      <div class="doc differ"><span class="tag">DeepSeek-V4-Flash · Topic</span><b>Approach differs.</b> Keep weights fixed, store observed transitions, and combine retrieved predictions with the model's own.</div>
+      <div class="doc match"><span class="tag">DeepSeek-V4-Flash · Free</span><b>Approach matches.</b> Adapt a frozen model through low-rank updates and compose adapters for combinations of dynamics changes.</div>
+    </article>
+  </div>
+  <a class="bridge" href="#live" data-goto="live" data-live-sub="watch">
+    <span class="bridge-k">Keep going in Live →</span>
+    <span>Proposals whose approach no 2026 paper shares stay on the <b>watchlist</b>: each new edition checks whether a later paper has caught up with them.</span>
+  </a>
+  <div class="next-row"><a class="button" href="#experiments" data-goto="experiments">← 2 · Experiments</a><a class="button primary next" href="#live" data-goto="live">Next: Live tracker →</a></div>
+</section>
+</div>
+
+<!-- ============================================================== VIEW 4: live -->
+<div class="view live-view" id="view-live" data-view="live" role="tabpanel" hidden>
+<section class="view-head">
+  <p class="eyebrow"><span class="pulse"></span>Live · Taste Tracker</p>
+  <h2>A benchmark that keeps moving forward</h2>
+  <p class="lead">Every quarter we add new models and extend the human reference with newly published papers. Proposals written from the frozen snapshot stay on a watchlist: when the community later publishes the same idea, the proposal counts as <b>verified</b>.</p>
+  <p class="strip-label">Editions · the window of human papers each one is scored against</p>
+  <div class="edition-strip" id="edition-strip"></div>
+  <div class="segmented live-sub" id="live-sub" role="tablist">
+    <button type="button" data-sub="trend" aria-checked="true">Model tracker</button>
+    <button type="button" data-sub="watch" aria-checked="false">Idea watch</button>
+  </div>
+</section>
+
+<section class="live-panel" data-sub-panel="trend">
+  <div class="grid two-one">
+    <div class="card">
+      <h3>Is the gap closing?</h3>
+      <p class="note">Score as a share of the human level (best method per model, averaged over areas), against model release date. Hollow points: released before the corpus cutoff.</p>
+      <div class="segmented" id="trend-metric"></div>
+      <figure class="chart" id="chart-trend" aria-label="Score against release date"></figure>
+    </div>
+    <div class="card changelog">
+      <h3>Changelog</h3>
+      <ol id="changelog"></ol>
+      <p class="note">Want to help? <a href="https://shanshanzhong.me/survey-2026/?s=quality" target="_blank" rel="noopener">Review ideas blind</a> and your scores join the human review set in a coming edition.</p>
+    </div>
+  </div>
+</section>
+
+<section class="live-panel" data-sub-panel="watch" hidden>
+  <div class="watch-head">
+    <p class="note">AI proposals written from the 2025 snapshot, and the later human paper that verified them (same problem and same approach). <b>A first sample from the paper; the full watchlist arrives with edition 2027.01.</b></p>
+    <div class="segmented" id="watch-filter"></div>
+  </div>
+  <div class="watch-grid" id="watch-list"></div>
+  <p class="coming-soon"><span class="cs-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="f-out" d="M12 2c.6 3.4-1.2 4.9-2.7 6.3C7.5 10 6 11.6 6 14.3 6 18 8.9 21 12 21s6-3 6-6.7c0-3.2-1.6-5-3.1-6.6C13.2 6 12.2 4.4 12 2z"/><path class="f-in" d="M12 11.2c.3 1.7-.6 2.3-1.3 3.1-.6.7-1.1 1.4-1.1 2.4 0 1.7 1.1 3 2.4 3s2.4-1.3 2.4-3c0-1.3-.6-2-1.3-2.9-.6-.8-1-1.6-1.1-2.6z"/></svg><svg viewBox="0 0 24 24"><path class="f-out" d="M12 2c.6 3.4-1.2 4.9-2.7 6.3C7.5 10 6 11.6 6 14.3 6 18 8.9 21 12 21s6-3 6-6.7c0-3.2-1.6-5-3.1-6.6C13.2 6 12.2 4.4 12 2z"/><path class="f-in" d="M12 11.2c.3 1.7-.6 2.3-1.3 3.1-.6.7-1.1 1.4-1.1 2.4 0 1.7 1.1 3 2.4 3s2.4-1.3 2.4-3c0-1.3-.6-2-1.3-2.9-.6-.8-1-1.6-1.1-2.6z"/></svg><svg viewBox="0 0 24 24"><path class="f-out" d="M12 2c.6 3.4-1.2 4.9-2.7 6.3C7.5 10 6 11.6 6 14.3 6 18 8.9 21 12 21s6-3 6-6.7c0-3.2-1.6-5-3.1-6.6C13.2 6 12.2 4.4 12 2z"/><path class="f-in" d="M12 11.2c.3 1.7-.6 2.3-1.3 3.1-.6.7-1.1 1.4-1.1 2.4 0 1.7 1.1 3 2.4 3s2.4-1.3 2.4-3c0-1.3-.6-2-1.3-2.9-.6-.8-1-1.6-1.1-2.6z"/></svg></span>More cases coming soon.</p>
+</section>
+
+</div>
+
+<!-- ============================================================== citation -->
+<section id="citation">
+  <h2>Citation</h2>
+  <div class="bibtex">
+    <button type="button" class="copy" data-copy="#bibtex-text">Copy</button>
+<pre id="bibtex-text">@article{zhong2026ideataste,
+  title   = {IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?},
+  author  = {Zhong, Shanshan and Xu, Chen and Ning, Jingjie and Liu, Zhengzhong and Kumar, Aviral and Xiong, Chenyan},
+  year    = {2026}
+}</pre>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>IdeaTaste · Carnegie Mellon University &amp; MBZUAI</p>
+</footer>
+
+<div class="tooltip" role="tooltip" hidden></div>
+<script src="assets/app.js?v=18" defer></script>
+<script src="assets/live.js?v=24" defer></script>
+</body>
+</html>

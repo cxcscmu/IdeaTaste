@@ -1,0 +1,69 @@
+{
+  "_comment": "Edit this file for each release. editions: newest last. watch: AI proposals from the frozen snapshot and their status (each needs a stable id; it is also the key for stored votes).",
+  "editions": [
+    {
+      "id": "2026.10",
+      "date": "2026-10",
+      "label": "Paper release",
+      "reference": "Jan–Aug 2026",
+      "models_added": ["Llama 4 Scout", "Claude Haiku 4.5", "Gemini 3.5 Flash-Lite", "DeepSeek-V4-Flash", "Qwen3.8-27B", "K2 Horizon 375B A23B"],
+      "note": "First release: 6 models, 4 areas, 4 methods, 90K+ proposals.",
+      "status": "released"
+    },
+    {
+      "id": "2027.01",
+      "date": "2027-01",
+      "label": "Q1 update",
+      "reference": "Jan–Dec 2026 (extended)",
+      "models_added": [],
+      "note": "Planned: new frontier models; re-check the watchlist against papers from Sep to Dec 2026.",
+      "status": "planned"
+    }
+  ],
+  "watch": [
+    {
+      "id": "mlsys-moe-router-reuse",
+      "status": "verified",
+      "area": "ML systems",
+      "model": "Qwen3.8-27B",
+      "method": "Topic",
+      "proposal": "Train only the router to increase expert reuse over consecutive tokens while preserving language-model performance.",
+      "problem": "Fetching uncached mixture-of-experts experts causes substantial I/O overhead.",
+      "paper": { "title": "ReMoE", "url": "https://arxiv.org/abs/2605.27081", "date": "2026-05" },
+      "verified_in": "2026.10"
+    },
+    {
+      "id": "wm-frozen-lora-compose",
+      "status": "verified",
+      "area": "World models",
+      "model": "DeepSeek-V4-Flash",
+      "method": "Free",
+      "proposal": "Adapt a frozen world model through low-rank updates and compose adapters for combinations of dynamics changes.",
+      "problem": "Pretrained world models must adapt to changing environments while retaining prior capabilities.",
+      "paper": { "title": "SPREAD", "url": "https://doi.org/10.1109/LRA.2026.3688061", "date": "2026" },
+      "verified_in": "2026.10"
+    },
+    {
+      "id": "mlsys-moe-topic-prefetch",
+      "status": "watching",
+      "area": "ML systems",
+      "model": "Qwen3.8-27B",
+      "method": "Frontier",
+      "proposal": "Predict expert demand from prompt topics, then prefetch experts and coordinate caching without changing the model.",
+      "problem": "Fetching uncached mixture-of-experts experts causes substantial I/O overhead.",
+      "paper": null,
+      "verified_in": null
+    },
+    {
+      "id": "wm-retrieval-transitions",
+      "status": "watching",
+      "area": "World models",
+      "model": "DeepSeek-V4-Flash",
+      "method": "Topic",
+      "proposal": "Keep weights fixed, store observed transitions, and combine retrieved predictions with the model's own.",
+      "problem": "Pretrained world models must adapt to changing environments while retaining prior capabilities.",
+      "paper": null,
+      "verified_in": null
+    }
+  ]
+}
