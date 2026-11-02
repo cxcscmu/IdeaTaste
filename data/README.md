@@ -26,9 +26,10 @@ configs:
 
 # IdeaTaste
 
-**Do LLMs share the research taste of human researchers?** IdeaTaste scores an LLM by how closely the research proposals it writes from a literature snapshot frozen at 2025 match the work the same communities published in 2026. Proposals and papers are compared on the literature they cite and on the ideas they state, giving four metrics: citation matching, idea matching, citation diversity and idea diversity.
+[Homepage](https://cxcscmu.github.io/IdeaTaste) · [Code](https://github.com/cxcscmu/IdeaTaste)
 
-[Homepage and leaderboard](https://cxcscmu.github.io/IdeaTaste) · [Code](https://github.com/cxcscmu/IdeaTaste)
+
+**Do LLMs share the research taste of human researchers?** LLM agents read a literature corpus frozen at 2025 and write research proposals; those proposals are then scored against the papers the same communities published in 2026. Proposals and papers are compared both on the literature they cite and on the ideas they state, giving four metrics: citation matching, idea matching, citation diversity and idea diversity.
 
 Four research areas, each with a literature corpus and a human reference: 263K papers published through 2025 and 11.6K published in January–August 2026, about 530 MB.
 

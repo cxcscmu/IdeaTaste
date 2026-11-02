@@ -11,7 +11,7 @@
 
 ![IdeaTaste: LLM agents and human researchers read the same literature up to 2025; their citations and their ideas (proposals vs. 2026 papers) are compared by matching, proposals are scored for diversity, and human experts review both blind.](assets/IdeaTaste.png)
 
-IdeaTaste is a benchmark that scores an LLM by how closely the research proposals it writes from a literature snapshot frozen at 2025 match the work the same communities published in 2026. Proposals and papers are compared on the literature they cite and on the ideas they state, giving four metrics: citation matching, idea matching, citation diversity and idea diversity.
+IdeaTaste is a benchmark for research taste. LLM agents read a literature corpus frozen at 2025 and write research proposals; those proposals are then scored against the papers the same communities published in 2026. Proposals and papers are compared both on the literature they cite and on the ideas they state, giving four metrics: citation matching, idea matching, citation diversity and idea diversity.
 
 
 ## Install
