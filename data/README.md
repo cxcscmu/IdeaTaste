@@ -30,7 +30,7 @@ configs:
 
 [Homepage and leaderboard](https://cxcscmu.github.io/IdeaTaste) · [Code](https://github.com/cxcscmu/IdeaTaste)
 
-This repository holds the benchmark inputs: the files a run of the benchmark reads. It holds no generated proposals or scores.
+Four research areas, each with a literature corpus and a human reference: 263K papers published through 2025 and 11.6K published in January–August 2026, about 530 MB.
 
 ## Quick start
 
