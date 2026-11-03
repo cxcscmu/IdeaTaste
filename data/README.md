@@ -85,7 +85,7 @@ Released under the MIT license. Metadata comes from OpenAlex (CC0) and Semantic 
 
 ```bibtex
 @article{zhong2026ideataste,
-  title   = {IdeaTaste: Can LLMs Match the Research Taste of Human Researchers?},
+  title   = {IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?},
   author  = {Zhong, Shanshan and Xu, Chen and Ning, Jingjie and Liu, Zhengzhong and Kumar, Aviral and Xiong, Chenyan},
   journal = {arXiv preprint arXiv:2611.03424},
   year    = {2026}

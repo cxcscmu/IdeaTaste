@@ -62,7 +62,7 @@ The paper's settings are the defaults: 300 proposals, 20 steps, and FRONTIER in 
 
 ```bibtex
 @article{zhong2026ideataste,
-  title   = {IdeaTaste: Can LLMs Match the Research Taste of Human Researchers?},
+  title   = {IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?},
   author  = {Zhong, Shanshan and Xu, Chen and Ning, Jingjie and Liu, Zhengzhong and Kumar, Aviral and Xiong, Chenyan},
   journal = {arXiv preprint arXiv:2611.03424},
   year    = {2026}
