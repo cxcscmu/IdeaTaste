@@ -29,7 +29,7 @@ configs:
 [Paper](https://arxiv.org/abs/2611.03424) · [Homepage](https://cxcscmu.github.io/IdeaTaste) · [Code](https://github.com/cxcscmu/IdeaTaste)
 
 
-**Do LLMs share the research taste of human researchers?** LLM agents read a literature corpus frozen at 2025 and write research proposals; those proposals are then scored against the papers the same communities published in 2026. Proposals and papers are compared both on the literature they cite and on the ideas they state, giving four metrics: citation matching, idea matching, citation diversity and idea diversity.
+**Can LLMs match the research taste of human researchers?** LLM agents read a literature corpus frozen at 2025 and write research proposals; those proposals are then scored against the papers the same communities published in 2026. Proposals and papers are compared both on the literature they cite and on the ideas they state, giving four metrics: citation matching, idea matching, citation diversity and idea diversity.
 
 Four research areas, each with a literature corpus and a human reference: 263K papers published through 2025 and 11.6K published in January–August 2026, about 530 MB.
 
@@ -85,7 +85,7 @@ Released under the MIT license. Metadata comes from OpenAlex (CC0) and Semantic 
 
 ```bibtex
 @article{zhong2026ideataste,
-  title   = {IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?},
+  title   = {IdeaTaste: Can LLMs Match the Research Taste of Human Researchers?},
   author  = {Zhong, Shanshan and Xu, Chen and Ning, Jingjie and Liu, Zhengzhong and Kumar, Aviral and Xiong, Chenyan},
   journal = {arXiv preprint arXiv:2611.03424},
   year    = {2026}
