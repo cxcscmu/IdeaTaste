@@ -26,7 +26,7 @@ configs:
 
 # IdeaTaste
 
-[Homepage](https://cxcscmu.github.io/IdeaTaste) · [Code](https://github.com/cxcscmu/IdeaTaste)
+[Paper](https://arxiv.org/abs/2611.03424) · [Homepage](https://cxcscmu.github.io/IdeaTaste) · [Code](https://github.com/cxcscmu/IdeaTaste)
 
 
 **Do LLMs share the research taste of human researchers?** LLM agents read a literature corpus frozen at 2025 and write research proposals; those proposals are then scored against the papers the same communities published in 2026. Proposals and papers are compared both on the literature they cite and on the ideas they state, giving four metrics: citation matching, idea matching, citation diversity and idea diversity.
@@ -87,6 +87,7 @@ Released under the MIT license. Metadata comes from OpenAlex (CC0) and Semantic 
 @article{zhong2026ideataste,
   title   = {IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?},
   author  = {Zhong, Shanshan and Xu, Chen and Ning, Jingjie and Liu, Zhengzhong and Kumar, Aviral and Xiong, Chenyan},
+  journal = {arXiv preprint arXiv:2611.03424},
   year    = {2026}
 }
 ```

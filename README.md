@@ -1,7 +1,7 @@
 # IdeaTaste
 
 [![Homepage](https://img.shields.io/badge/homepage-leaderboard-purple)](https://cxcscmu.github.io/IdeaTaste)
-[![Paper](https://img.shields.io/badge/paper-PDF-red)](https://cxcscmu.github.io/IdeaTaste/assets/paper.pdf)
+[![Paper](https://img.shields.io/badge/arXiv-2611.03424-red)](https://arxiv.org/abs/2611.03424)
 [![Dataset](https://img.shields.io/badge/dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/cx-cmu/IdeaTaste)
 [![Areas](https://img.shields.io/badge/areas-4-blue)](#data)
 [![Corpus](https://img.shields.io/badge/corpus-263K%20papers-blue)](#data)
@@ -64,6 +64,7 @@ The paper's settings are the defaults: 300 proposals, 20 steps, and FRONTIER in 
 @article{zhong2026ideataste,
   title   = {IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?},
   author  = {Zhong, Shanshan and Xu, Chen and Ning, Jingjie and Liu, Zhengzhong and Kumar, Aviral and Xiong, Chenyan},
+  journal = {arXiv preprint arXiv:2611.03424},
   year    = {2026}
 }
 ```
